@@ -1034,6 +1034,7 @@ GameObject:
   - component: {fileID: 1714408123}
   - component: {fileID: 1714408122}
   - component: {fileID: 1714408121}
+  - component: {fileID: 1714408124}
   m_Layer: 0
   m_Name: player_view
   m_TagString: Untagged
@@ -1159,6 +1160,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1714408124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714408119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f7a1633fb58544498f9f7719b8d96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::camera_movement
+  input: {fileID: 2121363808}
+  playerBody: {fileID: 0}
+  mouseSensitivity: 0.15
 --- !u!1 &2121363807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::input_handler
   playerInput: {fileID: 2121363809}
   moveInput: {x: 0, y: 0}
+  lookInput: {x: 0, y: 0}
   interactInput: 0
 --- !u!114 &2121363809
 MonoBehaviour:
@@ -1273,7 +1290,7 @@ MonoBehaviour:
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1714408123}
 --- !u!4 &2121363810
 Transform:
   m_ObjectHideFlags: 0
