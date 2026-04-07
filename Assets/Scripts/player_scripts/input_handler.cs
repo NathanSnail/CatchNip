@@ -7,7 +7,7 @@ public class Input_handler : MonoBehaviour
     private PlayerInput playerInput;
     public Vector2 moveInput;
     public Vector2 lookInput;
-    public bool interactInput;
+    public float interactInput;
 
     InputAction moveAction;
     InputAction lookAction;
@@ -22,7 +22,7 @@ public class Input_handler : MonoBehaviour
 
     void Update()
     {
-        interactInput = interactAction.ReadValue<bool>();
+        interactInput = interactAction.ReadValue<float>();
         moveInput = moveAction.ReadValue<Vector2>();
         lookInput = lookAction.ReadValue<Vector2>();
     }

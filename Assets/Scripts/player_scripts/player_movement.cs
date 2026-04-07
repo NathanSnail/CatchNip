@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player_movement : MonoBehaviour
 {
     [SerializeField]
     Input_handler input;
