@@ -182,12 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   input: {fileID: 2121363808}
   itemSlot: {fileID: 2044174024}
-  interactable: 0
+  countText: {fileID: 1722305285}
   camera: {fileID: 1714408123}
   hitDistance: 1.5
-  catCount: 0
+  interactable: 0
   catVisible: 0
-  countText: {fileID: 1722305285}
 --- !u!1 &170190255
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +910,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.04, y: 0.57, z: -2.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1003,6 +1002,7 @@ GameObject:
   - component: {fileID: 1275142191}
   - component: {fileID: 1275142190}
   - component: {fileID: 1275142189}
+  - component: {fileID: 1275142193}
   m_Layer: 0
   m_Name: cubeInteract
   m_TagString: interactable
@@ -1103,6 +1103,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275142193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275142188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bee88fc3706544dbfbb78e97430b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Object
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1687542886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::camera_movement
   input: {fileID: 2121363808}
   playerBody: {fileID: 82529989}
-  mouseSensitivity: 4
+  mouseSensitivity: 6
 --- !u!1 &1722305283
 GameObject:
   m_ObjectHideFlags: 0
