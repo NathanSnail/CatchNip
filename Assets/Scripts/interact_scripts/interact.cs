@@ -6,22 +6,22 @@ using TMPro;
 public class Interaction : MonoBehaviour
 {
     [SerializeField] Input_handler input;
-    public Toggle itemSlot; //checkbox
+    public Toggle item_slot; //checkbox
     public TextMeshProUGUI countText; // Reference to counting text
-    public Camera camera;
+    public Camera player_camera;
     public float hitDistance;   //how far away before player can interact with object
     public bool interactable;
-    public bool catVisible;
-    
+    public bool catVisible; //temp
+
     private Vector2 mousePos;
     private bool interactInput;
-    private int catCount;
+    private int catCount;//temp
     private static GameObject target;
 
     void Start()
     {
         interactInput = false;
-        catVisible = false;
+        catVisible = false;//temp
         catCount = 0;
     }
 
@@ -30,9 +30,10 @@ public class Interaction : MonoBehaviour
         target?.GetComponent<IInteractable>().interact(target);
     }
 
-    public void OnCount(InputAction.CallbackContext context)
+    public void OnCount(InputAction.CallbackContext context)//temp
     {
-        if (context.performed && catVisible){
+        if (context.performed && catVisible)
+        {
             catCount += 1;
         }
     }
@@ -40,33 +41,38 @@ public class Interaction : MonoBehaviour
     void Update()
     {
         //using ray casting detect object player is looking at
-        GameObject newTarget = Search();  
+        GameObject newTarget = Search();
 
-        if(newTarget is not null)
+        if (newTarget is not null)
         {
-            catVisible = newTarget.CompareTag("cat");  //if cat
+            catVisible = newTarget.CompareTag("cat");  //temp
 
             //check for interactable
-            if(newTarget.TryGetComponent(out IInteractable myInterface)){
+            if (newTarget.TryGetComponent(out IInteractable myInterface))
+            {
                 target?.GetComponent<IInteractable>().hide(target);     //stop highlighting prev target
                 myInterface.show(newTarget);
                 target = newTarget;                                     //set new targetas current one
             }
-            else{
+            else
+            {
                 target?.GetComponent<IInteractable>().hide(target);     //stop highlighting prev target
                 target = null;
             }
-        
-        }else{ //if no targets
-        
-            catVisible = false;
+
+        }
+        else
+        { //if no targets
+
+            catVisible = false;//temp
             target?.GetComponent<IInteractable>().hide(target);         //stop highlighting prev target
             target = null;
 
         }
 
+        //temp
         //update cat counter
-        if(catCount > 8)
+        if (catCount > 8)
         {
             catCount = 0;
         }
@@ -76,11 +82,11 @@ public class Interaction : MonoBehaviour
     private GameObject Search()
     {
         //using ray casting detect object player is looking at
-        mousePos = Mouse.current.position.ReadValue(); 
+        mousePos = Mouse.current.position.ReadValue();
         RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(mousePos);
-        
-        if (Physics.Raycast(ray, out hit) && (hit.distance < hitDistance)) 
+        Ray ray = player_camera.ScreenPointToRay(mousePos);
+
+        if (Physics.Raycast(ray, out hit) && (hit.distance < hitDistance))
         {
             return hit.transform.gameObject;
         }
