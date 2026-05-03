@@ -13,7 +13,7 @@ public class UIFeatures : MonoBehaviour
 
     public void Play()
     {
-        String name = game_scene.name;
+        string name = game_scene.name;
         Debug.Log(name);
         SceneManager.LoadScene(name);
     }
