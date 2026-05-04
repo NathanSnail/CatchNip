@@ -1,6 +1,6 @@
 using UnityEngine;
 
-abstract public class Puzzle : ScriptableObject
+abstract public class Puzzle : MonoBehaviour
 {
     private bool resolved = false;
 

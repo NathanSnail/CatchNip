@@ -7,7 +7,6 @@ public class Interaction : MonoBehaviour
 {
     [SerializeField] Input_handler input;
     public Toggle item_slot; //checkbox
-    public TextMeshProUGUI countText; // Reference to counting text
     public Camera player_camera;
     public float hitDistance;   //how far away before player can interact with object
     public bool interactable;
@@ -42,7 +41,7 @@ public class Interaction : MonoBehaviour
     {
         //using ray casting detect object player is looking at
         GameObject newTarget = Search();
-
+        Debug.Log(newTarget);
         if (newTarget is not null)
         {
             catVisible = newTarget.CompareTag("cat");  //temp
@@ -76,7 +75,6 @@ public class Interaction : MonoBehaviour
         {
             catCount = 0;
         }
-        countText.text = catCount.ToString();
     }
 
     private GameObject Search()

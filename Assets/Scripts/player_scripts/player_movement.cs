@@ -28,7 +28,7 @@ public class Player_movement : MonoBehaviour
         }
 
         //set initial player position
-        transform.position = new Vector3(0, playerHeight, 0);
+        transform.position = new Vector3(2, playerHeight, 2);
     }
 
     public void OnMove(InputAction.CallbackContext context)
