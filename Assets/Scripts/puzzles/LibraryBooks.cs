@@ -5,6 +5,11 @@ public class LibraryBooks : Puzzle
     public GameObject[] books;
     public GameObject cat;
 
+    public override GameObject getCat()
+    {
+        return cat;
+    }
+
     public override bool isSolved()
     {
         foreach (GameObject book_obj in books)
@@ -26,11 +31,6 @@ public class LibraryBooks : Puzzle
             Book book = book_obj.GetComponent<Book>();
             book.disable();
         }
-    }
-
-    public override GameObject getCat()
-    {
-        return cat;
     }
 }
 

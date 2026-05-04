@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3026384144032166540}
   m_Father: {fileID: 8596648179267895164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4301148386623809491
@@ -174,7 +175,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1357472602052074895}
-  - {fileID: 3026384144032166540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &7313841813767881209
@@ -190,6 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   input: {fileID: 0}
+  rb: {fileID: 0}
+  cameraTransform: {fileID: 0}
   speed: 2
 --- !u!114 &8621134400749722501
 MonoBehaviour:
@@ -204,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   input: {fileID: 0}
-  itemSlot: {fileID: 0}
+  item_slot: {fileID: 0}
   countText: {fileID: 0}
   player_camera: {fileID: 6102550070627514932}
   hitDistance: 1.5
@@ -238,12 +240,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7205838511705333384}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.079858825, y: 0.042915773, z: -0.019088317, w: 0.995699}
-  m_LocalPosition: {x: -0, y: 1.59, z: 0.32}
+  m_LocalRotation: {x: 0.07985883, y: 0.042915758, z: -0.019088317, w: 0.995699}
+  m_LocalPosition: {x: 0, y: 0.59000003, z: 0.32000017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8596648179267895164}
+  m_Father: {fileID: 1357472602052074895}
   m_LocalEulerAnglesHint: {x: 9.246, y: 4.79, z: -1.809}
 --- !u!20 &6102550070627514932
 Camera:

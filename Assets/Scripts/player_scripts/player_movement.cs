@@ -5,6 +5,9 @@ public class Player_movement : MonoBehaviour
 {
     [SerializeField]
     Input_handler input;
+    public Rigidbody rb;
+    public Transform cameraTransform;
+
     private Vector2 moveInput;
     public float speed = 0.8f;  //modify for faster/slower movement
 
@@ -33,8 +36,25 @@ public class Player_movement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();   //read input
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(new Vector3(moveInput.x, 0, moveInput.y) * speed * Time.deltaTime);
+        Vector3 input = new Vector3(moveInput.x, 0, moveInput.y);
+
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0;
+        right.y = 0;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 move = forward * input.z + right * input.x;
+
+        rb.linearVelocity = new Vector3(
+            move.x * speed,
+            rb.linearVelocity.y,
+            move.z * speed
+        );
     }
 }
