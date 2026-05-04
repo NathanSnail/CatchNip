@@ -49,6 +49,7 @@ public class Interaction : MonoBehaviour
             //check for interactable
             if (newTarget.TryGetComponent(out IInteractable myInterface))
             {
+                Debug.Log(myInterface);
                 target?.GetComponent<IInteractable>().hide(target);     //stop highlighting prev target
                 myInterface.show(newTarget);
                 target = newTarget;                                     //set new targetas current one
